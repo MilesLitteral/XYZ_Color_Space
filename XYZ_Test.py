@@ -4,42 +4,16 @@ from PIL import Image
 from collections import namedtuple
 from enum import Enum, auto
 
-
 XYZ = namedtuple('XYZ', 'x y z')
 CIE = namedtuple('CIE', "l a b")
 RGB = namedtuple('RGB', "r g b")
 
-#Create ACTG Like Gene Graphics
 class GeneRender:
-    
-    #ACTG CONSTANTS
-    class Color(Enum):
-        RED = auto()
-        BLUE = auto()
-        GREEN = auto()
-        YELLOW = auto()
-    #EXIT ACTG CONSTANTS
-
     def __init__(self, x=500, y=600):
         self.x = x
         self.y = y
         self.img = Image.new("RGB",(x, y), "black")
-        self.NORENDER = Image.new("RGB",(x, 50), "white")
-
-        #img = Image.new("RGB",(800,600), "black")
-        # self.lay1 = Image.new("RGB",(50, 50), "white") #Template for Bar
-        # self.lay2 = Image.new("RGB",(50, 50), "red")
-        # self.lay3 = Image.new("RGB",(50, 50), "blue")
-        # self.lay4 = Image.new("RGB",(50, 50), "green")
-        # self.lay5 = Image.new("RGB",(50, 50), "yellow")
         
-    def initialRender(self, rowCount):
-        #background = img
-        rowVar = 80
-        for x in rowCount:
-            self.img.paste(self.noRender, (10, rowVar))
-            rowVar = rowVar + 80
-
     def showRender(self):
         self.img.show()
 

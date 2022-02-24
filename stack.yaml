@@ -1,0 +1,33 @@
+name:                xyzTest
+version:             0.1.0.0
+github:              "githubuser/xyzTest"
+license:             BSD3
+author:              "Miles J. Litteral"
+maintainer:          "mandaloe2@gmail.com"
+copyright:           "2021"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         RGB -> Normals Test
+
+dependencies:
+- base >= 4.7 && < 5
+
+executables:
+  xyzTest: 
+    main:                Main.hs
+    source-dirs:         app/xyzTest
+    ghc-options:
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - linear

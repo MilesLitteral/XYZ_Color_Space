@@ -42,13 +42,15 @@ findZ z =
 pow :: (Num a, Integral b) => a -> b -> a
 pow value expo = value ^ expo
 
+--dotprod :: (Num r, Num g, Num b) => r -> g -> b -> Integer
 dotprod r g b = (r + g + b) - 128
 
+--xyzColor :: (Num x, Num y, Num z) => x -> y -> z -> V3
 xyzColor cx cy cz = do 
     let l = 116 * findY (cx / 95.047) - 16
     let a = 500 * findX (cx / 95.047) - findY (cy / 100.0)
     let b = 200 * findY (cy / 100.0) -  findZ (cz / 108.883)
-    return V3 (l, a, b)
+    return $ V3 (l, a, b)
 
 getSize :: Num a => Generate (a, a)
 getSize = do
